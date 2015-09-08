@@ -31,6 +31,31 @@ class Plugin_Name_Activator {
 	 */
 	public static function activate() {
 
+		add_action('init','add_page');
+
+		//Check and add a new page to be the front page
+		function add_page($slug = '', $name = '')
+		{
+			$slug ='wp-single-page-home';
+			$name ='wp-single-page-home';
+			global $wpdb;
+
+			// Search for an existing page with the specified page slug
+			$page_found = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type='page' AND post_name = %s LIMIT 1;", $slug ) );
+
+			if(!$page_found)
+			{
+				$page_data = array(
+				'post_status'    => 'publish',
+				'post_type'      => 'page',
+				'post_author'    => 1,
+				'post_title'     => $name,
+				'post_content'   => '[wp-single-page-home]',
+				'comment_status' => 'closed'
+				);
+			}
+			wp_insert_post( $page_data );
+		}
 	}
 
 }
