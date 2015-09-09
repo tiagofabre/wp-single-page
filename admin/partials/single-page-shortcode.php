@@ -23,7 +23,7 @@
             <div class="package-items">
                 <div class="item-image">
                     <?php if ( has_post_thumbnail()) : ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <h2><?php the_title_attribute(); ?></h2>
                         <?php 
                         the_post_thumbnail(); 
                         post_content();   
@@ -32,9 +32,9 @@
                     </a>
                     <?php endif; ?>
                 </div>
-                <h2><a href="<?php the_permalink() ?>" class="package-title"><?php the_title(); ?></a></h2>
+                <h2><?php the_title_attribute(); ?></h2>
                 <?php the_content('Read More About This Durango Package'); ?>
-                <a href="<?php the_permalink() ?>" class="read-more">Read More...</a>
+                
                 <hr>
             </div>
         <?php endwhile; ?>
