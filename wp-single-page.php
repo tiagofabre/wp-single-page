@@ -60,7 +60,7 @@
      * @since    1.0.0
      */
     function run_plugin_name() {
-        $plugin = new Plugin_Name();
+        $plugin = new Single_Page();
         $plugin->run();
     }
     run_plugin_name();
