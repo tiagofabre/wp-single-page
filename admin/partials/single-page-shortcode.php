@@ -26,7 +26,7 @@
                     <h2><?php the_title_attribute(); ?></h2>
                         <?php 
                         the_post_thumbnail(); 
-                        post_content();   
+                        
                         ?>
 
                     </a>

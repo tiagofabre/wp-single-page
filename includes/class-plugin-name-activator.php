@@ -32,7 +32,7 @@ class Plugin_Name_Activator {
 	public static function activate() {
 
 		add_action('init','add_page');
-
+        
 		//Check and add a new page to be the front page
 		function add_page($slug = '', $name = '')
 		{
