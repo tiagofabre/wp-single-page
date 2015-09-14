@@ -23,7 +23,7 @@ function wp_sp_partial_page_callback($post)
         <label for="parital-single-page">
             <input type="checkbox" name="parital-single-page" id="parital-single-page"
                    value="yes" <?php if (isset ($prfx_stored_meta['parital-single-page'])) checked($prfx_stored_meta['parital-single-page'][0], 'yes'); ?> />
-            <?php _e('Featured Item', '@wpsp') ?>
+            <?php _e('Partial page', '@wpsp') ?>
         </label>
 
     </div>
