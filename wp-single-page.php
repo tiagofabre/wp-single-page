@@ -31,25 +31,19 @@
      * The code that runs during plugin activation.
      * This action is documented in includes/class-single-page-activator.php
      */
-    function activate_plugin_name() {
+    function activate_wp_single_page() {
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-single-page-activator.php';
-        Plugin_Name_Activator::activate();
+        wp_single_page_activator::activate();
     }
-    /**
-     * The code that runs during plugin deactivation.
-     * This action is documented in includes/class-single-page-deactivator.php
-     */
-    function deactivate_plugin_name() {
-        require_once plugin_dir_path( __FILE__ ) . 'includes/class-single-page-deactivator.php';
-        Plugin_Name_Deactivator::deactivate();
-    }
-    register_activation_hook( __FILE__, 'activate_plugin_name' );
-    register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+
+    register_activation_hook( __FILE__, 'activate_wp_single_page' );
+    register_deactivation_hook( __FILE__, 'deactivate_wp_single_page' );
     /**
      * The core plugin class that is used to define internationalization,
      * admin-specific hooks, and public-facing site hooks.
      */
     require plugin_dir_path( __FILE__ ) . 'includes/class-single-page.php';
+
     /**
      * Begins execution of the plugin.
      *
@@ -59,10 +53,10 @@
      *
      * @since    1.0.0
      */
-    function run_plugin_name() {
-        $plugin = new Single_Page();
+    function run_wp_single_page() {
+        $plugin = new WP_Single_Page();
         $plugin->run();
     }
-    run_plugin_name();
+    run_wp_single_page();
     
 ?>

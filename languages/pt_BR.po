@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp_single_page 1.0\n"
+"POT-Creation-Date: 2015-09-17 23:13-0300\n"
+"PO-Revision-Date: 2015-09-17 23:13-0300\n"
+"Last-Translator: \n"
+"Language-Team: Tiago Fabre <tiagofabre@gmail.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;__e;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: .idea\n"
+
+#: admin/partials/admin-single-page-settings.php:16
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sem permissões suficientes para acessar esta página."
+
+#: admin/partials/admin-single-page-settings.php:26
+#, php-format
+msgid "Front page: %s"
+msgstr "Página inicial:%s"
+
+#: admin/partials/admin-single-page-settings.php:26
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Selecionar &mdash;"
+
+#: admin/partials/single-page-meta-box.php:8
+msgid "Partial single page"
+msgstr "Single page parcial"
+
+#: admin/partials/single-page-meta-box.php:21
+msgid "Check if this is a partial single page: "
+msgstr "Selecione, se esta for uma pagina parcial:"
+
+#: admin/partials/single-page-meta-box.php:26
+msgid "Partial page"
+msgstr "Página parcial"

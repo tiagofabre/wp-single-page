@@ -2,22 +2,22 @@
 /**
  *      Admin Page
  */
-add_action('admin_menu', 'my_plugin_menu');
+add_action('admin_menu', 'wp_single_page_menu');
 
-function my_plugin_menu()
+function wp_single_page_menu()
 {
-    add_options_page('My Plugin Options', 'Single page', 'manage_options', 'my-unique-identifier', 'my_plugin_options');
+    add_options_page('My Plugin Options', 'Single page', 'manage_options', 'my-unique-identifier', 'wp_single_page_options');
 }
 
 /** Step 3. */
-function my_plugin_options()
+function wp_single_page_options()
 {
     if (!current_user_can('manage_options')) {
         wp_die(__('You do not have sufficient permissions to access this page.'));
     }
 
-    $this->title();
-    $this->enable();
+    $this->wp_single_page_title();
+    $this->wp_single_page_enable();
 
     $pages = 6;
     for ($i = 1; $i < $pages; $i++) {
@@ -32,7 +32,7 @@ function my_plugin_options()
 /*
  * Title of the page
  */
-function title()
+function wp_single_page_title()
 {
     echo('<div class="wrap"><h1>');
     echo('Single page');
@@ -42,11 +42,10 @@ function title()
 /*
  * enable/disable plugin
  */
-function enable()
+function wp_single_page_enable()
 {
-    echo("<label for='uploads_use_yearmonth_folders'>");
-    echo('<input name="uploads_use_yearmonth_folders" type="checkbox" id="uploads_use_yearmonth_folders" value="1"<?php checked("1", get_option("uploads_use_yearmonth_folders")); ?> />');
-    _e('Organize my uploads into month- and year-based folders');
+    echo("<label for='enable_wp_single_page'>");
+    echo('<input name="enable_wp_single_page" type="checkbox" id="enable_wp_single_page" value="1"<?php checked("1", get_option("enable_wp_single_page")); ?> />');
 }
 
 ?>

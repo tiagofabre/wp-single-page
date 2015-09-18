@@ -5,7 +5,7 @@
  */
 function wp_sp_partial_page()
 {
-    add_meta_box('prfx_meta', __('Partial single page', '@wpsp'), 'wp_sp_partial_page_callback', 'page', 'side', 'high');
+    add_meta_box('prfx_meta', __('Partial single page', '@wpsp'), 'wp_single_partial_page_callback', 'page', 'side', 'high');
 }
 
 add_action('add_meta_boxes', 'wp_sp_partial_page');
@@ -13,12 +13,12 @@ add_action('add_meta_boxes', 'wp_sp_partial_page');
 /**
  * Outputs the content of the meta box
  */
-function wp_sp_partial_page_callback($post)
+function wp_single_partial_page_callback($post)
 {
     wp_nonce_field(basename(__FILE__), 'prfx_nonce');
     $prfx_stored_meta = get_post_meta($post->ID);
     ?>
-    <span class="prfx-row-title"><?php _e('Check if this is a partial single page: ', '@wpsp') ?></span>
+    <span class="prfx-row-title"><?php _e('Check to turn this a partial single-page: ', '@wpsp') ?></span>
     <div class="prfx-row-content">
         <label for="parital-single-page">
             <input type="checkbox" name="parital-single-page" id="parital-single-page"
@@ -33,7 +33,7 @@ function wp_sp_partial_page_callback($post)
 /**
  * Saves the custom meta input
  */
-function wp_sp_meta_save($post_id)
+function wp_single_page_meta_save($post_id)
 {
     // Checks save status - overcome autosave, etc.
     $is_autosave = wp_is_post_autosave($post_id);
@@ -53,5 +53,5 @@ function wp_sp_meta_save($post_id)
     }
 }
 
-add_action('save_post', 'wp_sp_meta_save');
+add_action('save_post', 'wp_single_page_meta_save');
 ?>

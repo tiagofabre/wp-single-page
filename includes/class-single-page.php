@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    wp_single_page
+ * @subpackage    wp_single_page/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    WP_Single_Page
+ * @subpackage WP_Single_Page/includes
+ * @author     Tiago Fabre <tiagofabre@gmail.com>
  */
-class Single_Page {
+class WP_Single_Page {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Single_Page {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Plugin_Name_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      wp_single_page_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -81,9 +81,9 @@ class Single_Page {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Plugin_Name_Loader. Orchestrates the hooks of the plugin.
-	 * - Plugin_Name_i18n. Defines internationalization functionality.
-	 * - Plugin_Name_Admin. Defines all hooks for the admin area.
+	 * - wp_single_page_Loader. Orchestrates the hooks of the plugin.
+	 * - wp_single_page_i18n. Defines internationalization functionality.
+	 * - wp_single_page_admin. Defines all hooks for the admin area.
 	 * - Plugin_Name_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
@@ -111,14 +111,14 @@ class Single_Page {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-single-page-admin.php';
 
-		$this->loader = new Plugin_Name_Loader();
+		$this->loader = new wp_single_page_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
+	 * Uses the wp_single_page_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -126,11 +126,10 @@ class Single_Page {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Plugin_Name_i18n();
+		$plugin_i18n = new wp_single_page_i18n();
 		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
+		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_wp_single_page_textdomain' );
 	}
 
 	/**
@@ -142,7 +141,7 @@ class Single_Page {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new wp_single_page_admin( $this->get_plugin_name(), $this->get_version() );
 	}
 
 	/**
@@ -169,7 +168,7 @@ class Single_Page {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Plugin_Name_Loader    Orchestrates the hooks of the plugin.
+	 * @return    wp_single_page_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
