@@ -5,8 +5,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/admin
+ * @package    wp_sp
+ * @subpackage    wp_sp/admin
  */
 
 /**
@@ -15,11 +15,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/admin
+ * @package    wp_sp
+ * @subpackage    wp_sp/admin
  * @author     Tiago Fabre <tiagofabre@gmail.com>
  */
-class wp_single_page_admin
+class wp_sp_admin
 {
     /**
      * The ID of this plugin.
@@ -49,9 +49,9 @@ class wp_single_page_admin
     {
         $this->plugin_name = 'wp-single-page';
         $this->version = '1.0';
-        require plugin_dir_path(__FILE__) . 'partials/admin-single-page-settings.php';
-        require plugin_dir_path(__FILE__) . 'partials/single-page-meta-box.php';
-        require plugin_dir_path(__FILE__) . 'partials/single-page-shortcode.php';
+        require plugin_dir_path(__FILE__) . 'partials/admin-wp-sp-settings.php';
+        require plugin_dir_path(__FILE__) . 'partials/single-wp-sp-box.php';
+        require plugin_dir_path(__FILE__) . 'partials/single-wp-sp.php';
     }
 
 }

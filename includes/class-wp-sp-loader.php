@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  * @author     Tiago Fabre <tiagofabre@gmail.com>
  */
-class wp_single_page_Loader {
+class wp_sp_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

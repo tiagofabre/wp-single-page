@@ -29,20 +29,20 @@
     }
     /**
      * The code that runs during plugin activation.
-     * This action is documented in includes/class-single-page-activator.php
+     * This action is documented in includes/class-wp-sp-activator.php
      */
-    function activate_wp_single_page() {
-        require_once plugin_dir_path( __FILE__ ) . 'includes/class-single-page-activator.php';
-        wp_single_page_activator::activate();
+    function activate_wp_sp() {
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-sp-activator.php';
+        wp_sp_activator::activate();
     }
 
-    register_activation_hook( __FILE__, 'activate_wp_single_page' );
-    register_deactivation_hook( __FILE__, 'deactivate_wp_single_page' );
+    register_activation_hook( __FILE__, 'activate_wp_sp' );
+    register_deactivation_hook( __FILE__, 'deactivate_wp_sp' );
     /**
      * The core plugin class that is used to define internationalization,
      * admin-specific hooks, and public-facing site hooks.
      */
-    require plugin_dir_path( __FILE__ ) . 'includes/class-single-page.php';
+    require plugin_dir_path( __FILE__ ) . 'includes/class-wp-sp.php';
 
     /**
      * Begins execution of the plugin.
@@ -53,10 +53,10 @@
      *
      * @since    1.0.0
      */
-    function run_wp_single_page() {
-        $plugin = new WP_Single_Page();
+    function run_wp_sp() {
+        $plugin = new Wp_sp_plugin();
         $plugin->run();
     }
-    run_wp_single_page();
+    run_wp_sp();
     
 ?>

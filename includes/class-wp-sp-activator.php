@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  * @author     Tiago Fabre <tiagofabre@gmail.com>
  */
-class wp_single_page_activator {
+class wp_sp_activator {
 
 	/**
 	 * Short Description. (use period)

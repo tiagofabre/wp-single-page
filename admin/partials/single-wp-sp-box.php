@@ -33,7 +33,7 @@ function wp_single_partial_page_callback($post)
 /**
  * Saves the custom meta input
  */
-function wp_single_page_meta_save($post_id)
+function wp_sp_meta_save($post_id)
 {
     // Checks save status - overcome autosave, etc.
     $is_autosave = wp_is_post_autosave($post_id);
@@ -53,5 +53,5 @@ function wp_single_page_meta_save($post_id)
     }
 }
 
-add_action('save_post', 'wp_single_page_meta_save');
+add_action('save_post', 'wp_sp_meta_save');
 ?>

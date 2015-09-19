@@ -1,10 +1,10 @@
 <?php
 
-add_shortcode('wp-single-page-home', 'wp_single_page_concat');
+add_shortcode('wp-single-page-home', 'wp_sp_concat');
 /*
  * Add new shortcode to override the contetn of the main page to add partial pages
  */
-function wp_single_page_concat()
+function wp_sp_concat()
 {
     $args = array(
         'post_type' => 'page',

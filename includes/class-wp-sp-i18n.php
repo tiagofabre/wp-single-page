@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  * @author     Your Name <email@example.com>
  */
-class wp_single_page_i18n {
+class wp_sp_i18n {
 
 	/**
 	 * The domain specified for this plugin.
@@ -40,7 +40,7 @@ class wp_single_page_i18n {
 	 *
 	 * @since    1.0.0
 	 */
-	public function load_wp_single_page_textdomain() {
+	public function load_wp_sp_textdomain() {
 
 		load_plugin_textdomain(
 			$this->domain,

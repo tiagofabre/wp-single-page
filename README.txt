@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: Tiago Fabre
 Donate link:
-Tags: Single-page, sinigle, custom, page, one page, website
+Tags: Single-page, single, custom, page, one page, website
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: 4.3
@@ -17,7 +17,7 @@ This plugin will enable a check box on page editor, and every pages check will b
 A few notes about the sections above:
 
 *   "Contributors" Tiago Fabre
-*   "Tags" Single-page, sinigle, custom, page, one page, website
+*   "Tags" Single-page, single, custom, page, one page, website
 *   "Requires at least" 3.8
 *   "Tested up to" 4.3
 
@@ -27,10 +27,12 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `single-page.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Check the pages you wnat to see on frontpage as 'Partial page'
-1. The plugin will add a new page called wp-single-page-home, set this page as front page
+1. Upload `wp-single-page.zip` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Check the pages you want to see on frontpage as 'Partial page'
+4. The plugin will add a new page called wp-single-page-home, set this page as front page
+or
+4. you can use in your page a shortcode [wp-single-page-home], them it will render the pages
 
 == Frequently Asked Questions ==
 
@@ -52,4 +54,4 @@ Answer to foo bar dilemma.
 Ordered list:
 
 1. Make a single page website
-1. ease to make a landing page
+2. Ease to make a landing page

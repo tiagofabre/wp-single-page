@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    wp_single_page
- * @subpackage    wp_single_page/includes
+ * @package    wp_sp
+ * @subpackage    wp_sp/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    WP_Single_Page
- * @subpackage WP_Single_Page/includes
+ * @package    wp_sp
+ * @subpackage wp_sp/includes
  * @author     Tiago Fabre <tiagofabre@gmail.com>
  */
-class WP_Single_Page {
+class Wp_sp_plugin {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class WP_Single_Page {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      wp_single_page_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      wp_sp_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -81,9 +81,9 @@ class WP_Single_Page {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - wp_single_page_Loader. Orchestrates the hooks of the plugin.
-	 * - wp_single_page_i18n. Defines internationalization functionality.
-	 * - wp_single_page_admin. Defines all hooks for the admin area.
+	 * - wp_sp_Loader. Orchestrates the hooks of the plugin.
+	 * - wp_sp_i18n. Defines internationalization functionality.
+	 * - wp_sp_admin. Defines all hooks for the admin area.
 	 * - Plugin_Name_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
@@ -98,27 +98,27 @@ class WP_Single_Page {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-single-page-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-sp-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-single-page-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-sp-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-single-page-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-sp-admin.php';
 
-		$this->loader = new wp_single_page_Loader();
+		$this->loader = new wp_sp_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the wp_single_page_i18n class in order to set the domain and to register the hook
+	 * Uses the wp_sp_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -126,10 +126,10 @@ class WP_Single_Page {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new wp_single_page_i18n();
+		$plugin_i18n = new wp_sp_i18n();
 		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_wp_single_page_textdomain' );
+		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_wp_sp_textdomain' );
 	}
 
 	/**
@@ -141,7 +141,7 @@ class WP_Single_Page {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new wp_single_page_admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new wp_sp_admin( $this->get_plugin_name(), $this->get_version() );
 	}
 
 	/**
@@ -168,7 +168,7 @@ class WP_Single_Page {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    wp_single_page_Loader    Orchestrates the hooks of the plugin.
+	 * @return    wp_sp_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
