@@ -171,7 +171,7 @@ class Wp_sp_plugin {
 	 * @return    wp_sp_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
-		return $this->loader;
+		return $this->loader; 
 	}
 
 	/**
